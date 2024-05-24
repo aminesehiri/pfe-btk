@@ -1,0 +1,74 @@
+/* Container for the login form */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5; /* Light grey background */
+  }
+  
+  /* Login form */
+  .login-form {
+    width: 400px;
+    padding: 40px;
+    border-radius: 20px;
+    background-color: #ffffff; /* White background */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  /* Login form title */
+  .login-form h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333333; /* Dark grey text */
+  }
+  
+  /* Form group */
+  .form-group {
+    margin-bottom: 25px;
+  }
+  
+  /* Label for form controls */
+  .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #555555; /* Grey text */
+  }
+  
+  /* Form input fields */
+  .form-control {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #cccccc; /* Light grey border */
+    border-radius: 8px;
+    font-size: 16px;
+    color: #555555; /* Dark grey text */
+    transition: border-color 0.3s ease;
+  }
+  
+  /* Focus state for form input fields */
+  .form-control:focus {
+    outline: none;
+    border-color: #007bff; /* Blue border on focus */
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1); /* Blue shadow on focus */
+  }
+  
+  /* Login button */
+  .btn-primary {
+    width: 100%; /* Set button width to 100% */
+    padding: 15px; /* Increase padding */
+    border: none;
+    border-radius: 20px; /* Add border radius */
+    background-color: #003366; /* Vibrant blue button */
+    color: #ffffff; /* White text */
+    font-size: 18px; /* Larger font size */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Hover state for login button */
+  .btn-primary:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  

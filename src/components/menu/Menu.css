@@ -1,0 +1,33 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #004080;
+  color: white;
+}
+
+.logo-container {
+  flex: 1;
+}
+
+.logo-container img {
+  max-width: 100%; /* Set maximum width to maintain aspect ratio */
+  max-height: 100%;
+  height: auto; /* Let the height adjust automatically */
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+ul li {
+  margin-left: 10px;
+}
+
+ul li:last-child {
+  margin-left: 0;
+}

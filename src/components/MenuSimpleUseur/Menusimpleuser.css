@@ -1,0 +1,60 @@
+nav {
+    background-color: #003366;
+    border-bottom: 1px solid #004080;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px; /* Adjust padding as needed */
+    color: white; /* Set text color to white */
+  }   
+
+
+  
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+    left: 50%;
+  }
+  
+  .logo-container img {
+    height: 50px; /* Adjust the height of the logo */
+    margin-right: 10px; /* Add some spacing between the logo and the menu items */
+    margin-left: 20px;
+
+  }
+  
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end; /* Align the list items to the right */
+  }
+  
+  li {
+    margin-left: 20px; /* Adjust margin to separate list items */
+  }
+  
+  a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  a:hover, a:focus {
+    background-color: #004080;
+    border-radius: 20px;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    color: #ffffff;
+  }
+  
+  header, footer {
+    background-color: #ffffff;
+    padding: 10px 0;
+  }
+  

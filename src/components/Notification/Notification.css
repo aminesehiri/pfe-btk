@@ -1,0 +1,103 @@
+/* Base styles for enhanced readability and modern look */
+body, input, button, table {
+  font-family: 'Roboto', sans-serif; /* Modern, readable font */
+  color: black; /* Ensures text is black across all basic elements */
+}
+
+/* Styling for headers */
+h1 {
+  margin-top: 40px;
+  margin-left: 50px;
+  color: black; /* Explicitly setting the color to black for headers */
+}
+
+/* Enhanced table design */
+.notification-table {
+  width: 100%;
+  margin-bottom: 100px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow */
+  border-collapse: separate;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Specific styles for table header */
+.notification-table thead {
+  background-color: #003366; /* Set a custom background color, e.g., Bootstrap primary blue */
+  color: white; /* White text for better contrast */
+}
+
+.notification-table th, .notification-table td {
+  padding: 12px 15px;
+  text-align: center; /* Center align table headers and cells */
+}
+
+
+
+/* Custom button styles */
+button {
+  border: none;
+  background: #003366; /* Bootstrap primary blue */
+  color: white; /* Text color white to contrast with button background */
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  display: inline-block; /* Ensures buttons align correctly in the cell */
+  background-color: transparent;
+}
+
+button:hover {
+  background:#ccc; /* Darker blue on hover */
+}
+
+/* Container for buttons to ensure alignment */
+.notification-cell button {
+  margin: auto;
+  display: inline-block; /* Align buttons next to each other */
+}
+
+.notification-cell img {
+  cursor: pointer; /* Ensures the cursor changes to pointer when over the button images */
+  vertical-align: middle; /* Aligns images vertically with text or other elements */
+  margin-right: 5px; /* Space between buttons */
+}
+
+/* Count information box styling */
+.count-info {
+  border: 1px solid #ccc;
+  width: 90%;
+  max-width: 600px;
+  padding: 20px;
+  margin: 20px auto; /* Center align the count info box */
+  background-color: #f9f9f9; /* Light background for the container */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.membre, .en-attente {
+  padding: 15px;
+  width: 90%; /* Full width */
+  font-weight: bold;
+  color: black; /* Ensuring text color is black for member and pending statuses */
+  background-color: #CCFFCC; /* For members */
+}
+
+.en-attente {
+  background-color: #FFFFCC; /* For pending requests */
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+  h1 {
+    margin-left: 20px;
+  }
+
+  .count-info {
+    width: calc(100% - 40px); /* Responsive width */
+  }
+
+  .notification-table {
+    display: block;
+    overflow-x: auto; /* Allows table to scroll horizontally on small screens */
+  }
+}
