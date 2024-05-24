@@ -13,10 +13,18 @@ function Homepage_dashbord() {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [pin, setPin] = useState('');
+  const [iframeSrc, setIframeSrc] = useState('');
 
   const handleCompteClick = () => {
     setShowIframe(true);
     setShowDashboardRequest(false);
+    setIframeSrc("http://localhost:4848/single/?appid=C%3A%5CUsers%5Cshiri%5COneDrive%5CDocuments%5CQlik%5CSense%5CApps%5Ccommercial.qvf&sheet=92389320-b43b-4b01-85f9-47874976f67e&theme=horizon&opt=ctxmenu,currsel");
+  };
+
+  const handleVenteCarteClick = () => {
+    setShowIframe(true);
+    setShowDashboardRequest(false);
+    setIframeSrc("http://localhost:4848/single/?appid=C%3A%5CUsers%5Cshiri%5COneDrive%5CDocuments%5CQlik%5CSense%5CApps%5Cvente%20carte.qvf&sheet=5142f3cd-a519-4cb8-87a9-6662b10ab91b&theme=horizon&opt=ctxmenu,currsel");
   };
 
   const handleDashboardRequestClick = () => {
@@ -64,7 +72,7 @@ function Homepage_dashbord() {
             <p>Commercial dashboards:</p>
             <ul className="sub-menu">
               <li><Link to="#" onClick={handleCompteClick}>Creation Compte</Link></li>
-              <li><Link to="#">Vente Carte</Link></li>
+              <li><Link to="#" onClick={handleVenteCarteClick}>Vente Carte</Link></li>
               <li><Link to="#">Vente Pack</Link></li>
               <li><Link to="#">EER</Link></li>
               <li><Link to="#">Credit</Link></li>
@@ -78,7 +86,7 @@ function Homepage_dashbord() {
       <div className="content"><br />
         {showIframe && (
           <iframe
-            src="http://localhost:4848/single/?appid=C%3A%5CUsers%5Cshiri%5COneDrive%5CDocuments%5CQlik%5CSense%5CApps%5Ccommercial.qvf&sheet=92389320-b43b-4b01-85f9-47874976f67e&theme=horizon&opt=ctxmenu,currsel"
+            src={iframeSrc}
             style={{ border: 'none', width: '100%', height: '100%' }}
           ></iframe>
         )}
