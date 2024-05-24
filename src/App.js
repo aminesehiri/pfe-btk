@@ -10,7 +10,7 @@ import Homepage_dashbord from './components/homepage_dashbords/Homepage_dashbord
 import Adddata from './components/adddata/Adddata';
 import FirstPageSimpleUser from './components/FirstPageSimpleUser/FirstPageSimpleUser'
 
-import { AuthProvider } from './AuthContext'; // Adjust path as necessary
+import { AuthProvider } from './AuthContext'; // Adjust path as necessar
 import ProtectedRoute from './ProtectedRoute'; // Adjust path as necessary
 
 function App() {
