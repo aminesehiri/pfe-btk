@@ -38,9 +38,11 @@ function DashbordSimpleUser() {
                         <p>Commercial dashboards:</p>
                         <ul className="sub-menu">
                             <li><Link to="#" onClick={handleCompteClick}>Creation Compte</Link></li>
+                            <li><Link to="#">Cloture Compte</Link></li>
                             <li><Link to="#" onClick={handleVenteCarteClick}>Vente Carte</Link></li>
-                            <li><Link to="#" onClick={handleCreditClick}>Credit</Link></li>
+                            <li><Link to="#" onClick={handleVenteCarteClick}>Resiliation Carte</Link></li>
                             <li><Link to="#">Vente Pack</Link></li>
+                            <li><Link to="#" onClick={handleCreditClick}>Credit</Link></li>
                             <li><Link to="#">EER</Link></li>
                             
                         </ul>

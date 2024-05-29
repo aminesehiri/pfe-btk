@@ -26,6 +26,14 @@ function Homepage_dashbord() {
     setShowDashboardRequest(false);
     setIframeSrc("http://localhost:4848/single/?appid=C%3A%5CUsers%5Cshiri%5COneDrive%5CDocuments%5CQlik%5CSense%5CApps%5Cvente%20carte.qvf&sheet=5142f3cd-a519-4cb8-87a9-6662b10ab91b&theme=horizon&opt=ctxmenu,currsel");
   };
+  const handleCreditClick = () => {
+    setShowIframe(true);
+    setIframeSrc("http://localhost:4848/single/?appid=C%3A%5CUsers%5Cshiri%5COneDrive%5CDocuments%5CQlik%5CSense%5CApps%5Ccredit.qvf&sheet=5d677902-712e-4bfd-9ce4-a7d31e48544f&theme=horizon&opt=ctxmenu,currsel");
+};
+const handleEERClick = () => {
+  setShowIframe(true);
+  setIframeSrc("http://localhost:4848/single/?appid=C%3A%5CUsers%5Cshiri%5COneDrive%5CDocuments%5CQlik%5CSense%5CApps%5CEER.qvf&sheet=9ab8c8ab-070b-4890-b842-e09ebe709da6&theme=horizon&opt=ctxmenu,currsel");
+};
 
   const handleDashboardRequestClick = () => {
     setShowDashboardRequest(true);
@@ -71,11 +79,14 @@ function Homepage_dashbord() {
           <li><br />
             <p>Commercial dashboards:</p>
             <ul className="sub-menu">
-              <li><Link to="#" onClick={handleCompteClick}>Creation Compte</Link></li>
-              <li><Link to="#" onClick={handleVenteCarteClick}>Vente Carte</Link></li>
-              <li><Link to="#">Vente Pack</Link></li>
-              <li><Link to="#">EER</Link></li>
-              <li><Link to="#">Credit</Link></li>
+            <li><Link to="#" onClick={handleCompteClick}>Creation Compte</Link></li>
+                            <li><Link to="#">Cloture Compte</Link></li>
+                            <li><Link to="#" onClick={handleVenteCarteClick}>Vente Carte</Link></li>
+                            <li><Link to="#" onClick={handleVenteCarteClick}>Resiliation Carte</Link></li>
+                            <li><Link to="#">Vente Pack</Link></li>
+                            <li><Link to="#" onClick={handleCreditClick}>Credit</Link></li>
+                            <li><Link to="#"onClick={handleEERClick}>EER</Link></li>
+              
             </ul>
           </li>
           <li>

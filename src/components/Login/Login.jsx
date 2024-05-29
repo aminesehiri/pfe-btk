@@ -29,9 +29,9 @@ function Login() {
         setUserRole(role); // Save user role to state
         // Redirect user to appropriate page based on role
         if (role === 'admin') {
-          navigate('/Firstpageafterlogin');
+          navigate('/Homepage_dashbord');
         } else {
-          navigate('/FirstPageSimpleUser');
+          navigate('/DashbordSimpleUser');
         }
       });
     } catch (error) {
