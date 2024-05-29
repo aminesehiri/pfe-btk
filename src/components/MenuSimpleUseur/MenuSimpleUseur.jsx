@@ -25,7 +25,7 @@ function MenuSimpleUseur() {
       <img src={logo} alt="BTK Logo" />
     </div>
     <ul>
-      <li><Link to="/Homepage_dashbord">Tableaux de bord</Link></li>
+      <li><Link to="/DashbordSimpleUser">Tableaux de bord</Link></li>
 
       <li>
         {/* Use the Link component but attach the handleLogout function */}

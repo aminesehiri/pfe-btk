@@ -5,6 +5,7 @@ function FirstPageSimpleUser() {
   return (
     <div>
         <MenuSimpleUser/>
+       
     </div>
   )
 }
