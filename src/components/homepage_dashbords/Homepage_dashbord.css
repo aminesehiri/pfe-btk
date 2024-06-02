@@ -8,20 +8,20 @@ body, html {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1001; /* Ensure the menu is above other elements */
-  background-color: white; /* Adjust background color as needed */
-  border-bottom: 2px solid #003366; /* Add a bottom border to match the blue theme */
+  z-index: 1001;
+  background-color: white;
+  border-bottom: 2px solid #003366;
 }
 
 .vertical-navbar {
   background-color: #003366;
-  width: 250px; /* Adjust width as needed */
-  height: 100vh; /* Adjust height as needed */
+  width: 250px;
+  height: 100vh;
   position: fixed;
-  top: 60px; /* Adjust top position to leave space for the MenuAfterLogin */
+  top: 60px;
   left: 0;
-  z-index: 1000; /* Ensure the vertical navbar is above other elements */
-  overflow-y: auto; /* Add vertical scrolling if content overflows */
+  z-index: 1000;
+  overflow-y: auto;
 }
 
 .vertical-navbar ul {
@@ -29,7 +29,7 @@ body, html {
   padding: 0;
   margin: 0;
   display: flex;
-  flex-direction: column; /* Stack items vertically */
+  flex-direction: column;
 }
 
 .vertical-navbar ul li {
@@ -38,7 +38,7 @@ body, html {
 }
 
 .vertical-navbar ul li p {
-  color: white; /* Text color */
+  color: white;
   text-decoration: none;
 }
 
@@ -49,19 +49,20 @@ body, html {
 }
 
 .sub-menu {
-  display: none; /* Hide sub-menu by default */
-  padding-left: 20px; /* Adjust indentation for sub-menu items */
+  display: none;
+  padding-left: 20px;
 }
 
 .vertical-navbar ul li:hover .sub-menu {
-  display: block; /* Display sub-menu on hover */
+  display: block;
 }
 
 .content {
-  margin-left: 250px; /* Ensure content is pushed to the right to make space for the vertical navbar */
-  padding-top: 60px; /* Ensure content does not overlap with fixed MenuAfterLogin */
-  width: calc(100% - 250px); /* Adjust the width to take up remaining space */
-  height: calc(100vh - 60px); /* Adjust the height to take up remaining space */
+  margin-left: 250px;
+  padding-top: 60px;
+  width: calc(100% - 250px);
+  height: calc(100vh - 60px);
+  margin-bottom: 50px;
 }
 
 iframe {
@@ -72,36 +73,54 @@ iframe {
 
 .dashboard-request {
   padding: 20px;
-  background-color: #f0f0f0; /* Light background for the form */
-  border-radius: 8px; /* Rounded corners for the form */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for the form */
-  color: #003366; /* Text color to match the theme */
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: #003366;
   height: 100%;
 }
 
-.dashboard-request h1 {
-  color: #003366; /* Heading color to match the theme */
+.dashboard-request h2 {
+  color: #003366;
+}
+
+.dashboard-request .form-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dashboard-request .form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 10px;
 }
 
 .dashboard-request label {
-  display: block;
-  margin-bottom: 5px;
-  color: #003366; /* Label color to match the theme */
+  color: #003366;
+  text-align: center;
+  width: 100%;
 }
 
 .dashboard-request input[type="text"],
-.dashboard-request input[type="password"], /* Added input type for PIN */
+.dashboard-request input[type="password"],
 .dashboard-request textarea {
-  width: 100%;
+  width: 80%;
   padding: 8px;
-  margin-bottom: 5px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
+.dashboard-request input[type="file"] {
+  width: 80%;
+}
+
 .dashboard-request button {
-  background-color: #003366; /* Button background color */
-  color: white; /* Button text color */
+  background-color: #003366;
+  color: white;
   padding: 10px 20px;
   border: none;
   border-radius: 4px;
@@ -109,5 +128,5 @@ iframe {
 }
 
 .dashboard-request button:hover {
-  background-color: #005599; /* Darker shade for hover effect */
+  background-color: #005599;
 }

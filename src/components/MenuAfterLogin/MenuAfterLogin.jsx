@@ -29,7 +29,7 @@ function MenuAfterLogin() {
       <ul>
         <li><Link to="/Homepage_dashbord">Tableaux de Bord</Link></li>
         <li><Link to="/Notification">Gestion des Comptes</Link></li>
-        <li><Link to="/LesDemandesdeDashboards">Les Demandes de Dashboards</Link></li>
+        <li><Link to="/DemandesdeDashboards">demandes des tableau de bord</Link></li>
         <li>
           {/* Use the Link component but attach the handleLogout function */}
           <Link to="/Login" onClick={handleLogout}>Déconnexion</Link>

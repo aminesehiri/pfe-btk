@@ -1,0 +1,11 @@
+/* src/components/Footer/Footer.css */
+
+  footer {
+    text-align: center;
+    padding: 1em;
+    background-color: #003366;
+    color: white; /* This ensures the text is readable on a dark background */
+    width: 100%;
+
+  }
+  

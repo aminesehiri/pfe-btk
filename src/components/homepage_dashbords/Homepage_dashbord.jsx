@@ -3,6 +3,24 @@ import { Link } from 'react-router-dom';
 import MenuAfterLogin from '../MenuAfterLogin/MenuAfterLogin';
 import './Homepage_dashbord.css';
 import axios from 'axios';
+import { initializeApp } from 'firebase/app';
+import { getFirestore, collection, addDoc } from 'firebase/firestore';
+import { getAuth } from 'firebase/auth';
+
+// Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyBaljt3wRPRHgIJHly8Um_bPLReWXAH4Do",
+  authDomain: "site-btk-pfe.firebaseapp.com",
+  projectId: "site-btk-pfe",
+  storageBucket: "site-btk-pfe.appspot.com",
+  messagingSenderId: "1078594678116",
+  appId: "1:1078594678116:web:67ee5a5df44f744c81de71"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const auth = getAuth();
 
 function Homepage_dashbord() {
   const [showIframe, setShowIframe] = useState(false);
@@ -24,16 +42,18 @@ function Homepage_dashbord() {
   const handleVenteCarteClick = () => {
     setShowIframe(true);
     setShowDashboardRequest(false);
-    setIframeSrc("http://localhost:4848/single/?appid=C%3A%5CUsers%5Cshiri%5COneDrive%5CDocuments%5CQlik%5CSense%5CApps%5Cvente%20carte.qvf&sheet=5142f3cd-a519-4cb8-87a9-6662b10ab91b&theme=horizon&opt=ctxmenu,currsel");
+    setIframeSrc("http://localhost:4848/single/?appid=C%3A%5CUsers%5Cshiri%5CDocuments%5CQlik%5CSense%5CApps%5Cvente%20carte.qvf&sheet=5142f3cd-a519-4cb8-87a9-6662b10ab91b&theme=horizon&opt=ctxmenu,currsel");
   };
+  
   const handleCreditClick = () => {
     setShowIframe(true);
     setIframeSrc("http://localhost:4848/single/?appid=C%3A%5CUsers%5Cshiri%5COneDrive%5CDocuments%5CQlik%5CSense%5CApps%5Ccredit.qvf&sheet=5d677902-712e-4bfd-9ce4-a7d31e48544f&theme=horizon&opt=ctxmenu,currsel");
-};
-const handleEERClick = () => {
-  setShowIframe(true);
-  setIframeSrc("http://localhost:4848/single/?appid=C%3A%5CUsers%5Cshiri%5COneDrive%5CDocuments%5CQlik%5CSense%5CApps%5CEER.qvf&sheet=9ab8c8ab-070b-4890-b842-e09ebe709da6&theme=horizon&opt=ctxmenu,currsel");
-};
+  };
+  
+  const handleEERClick = () => {
+    setShowIframe(true);
+    setIframeSrc("http://localhost:4848/single/?appid=C%3A%5CUsers%5Cshiri%5COneDrive%5CDocuments%5CQlik%5CSense%5CApps%5CEER.qvf&sheet=9ab8c8ab-070b-4890-b842-e09ebe709da6&theme=horizon&opt=ctxmenu,currsel");
+  };
 
   const handleDashboardRequestClick = () => {
     setShowDashboardRequest(true);
@@ -63,9 +83,21 @@ const handleEERClick = () => {
       });
       console.log('Response from server:', response.data);
       alert('File uploaded and info saved successfully');
+
+      // Save request info to Firebase
+      await addDoc(collection(db, 'dashbords'), {
+        dashboardName,
+        description,
+        firstName,
+        lastName,
+        pin,
+        status: 'non traiter',
+        timestamp: new Date()
+      });
+      console.log('Request info saved to Firebase');
     } catch (error) {
-      console.error('Error uploading file:', error);
-      alert('Error uploading file');
+      console.error('Error uploading file or saving info:', error);
+      alert('Error uploading file or saving info');
     }
   };
 
@@ -79,14 +111,13 @@ const handleEERClick = () => {
           <li><br />
             <p>Commercial dashboards:</p>
             <ul className="sub-menu">
-            <li><Link to="#" onClick={handleCompteClick}>Creation Compte</Link></li>
-                            <li><Link to="#">Cloture Compte</Link></li>
-                            <li><Link to="#" onClick={handleVenteCarteClick}>Vente Carte</Link></li>
-                            <li><Link to="#" onClick={handleVenteCarteClick}>Resiliation Carte</Link></li>
-                            <li><Link to="#">Vente Pack</Link></li>
-                            <li><Link to="#" onClick={handleCreditClick}>Credit</Link></li>
-                            <li><Link to="#"onClick={handleEERClick}>EER</Link></li>
-              
+              <li><Link to="#" onClick={handleCompteClick}>Creation Compte</Link></li>
+              <li><Link to="#">Cloture Compte</Link></li>
+              <li><Link to="#" onClick={handleVenteCarteClick}>Vente Carte</Link></li>
+              <li><Link to="#" onClick={handleVenteCarteClick}>Resiliation Carte</Link></li>
+              <li><Link to="#">Vente Pack</Link></li>
+              <li><Link to="#" onClick={handleCreditClick}>Credit</Link></li>
+              <li><Link to="#" onClick={handleEERClick}>EER</Link></li>
             </ul>
           </li>
           <li>
@@ -104,61 +135,67 @@ const handleEERClick = () => {
         {showDashboardRequest && (
           <div className="dashboard-request">
             <center><h2>Demande de Dashboard</h2></center>
-            <form onSubmit={handleFileUpload}>
-              <label>
-                Nom:
-                <input
-                  type="text"
-                  name="lastName"
-                  value={lastName}
-                  onChange={(e) => setLastName(e.target.value)}
-                />
-              </label>
-              <br />
-              <label>
-                Prénom:
-                <input
-                  type="text"
-                  name="firstName"
-                  value={firstName}
-                  onChange={(e) => setFirstName(e.target.value)}
-                />
-              </label>
-              <br />
-              <label>
-                PIN bancaire:
-                <input
-                  type="password"
-                  name="pin"
-                  value={pin}
-                  onChange={(e) => setPin(e.target.value)}
-                />
-              </label>
-              <br />
-              <label>
-                Nom du Dashboard:
-                <input
-                  type="text"
-                  name="dashboardName"
-                  value={dashboardName}
-                  onChange={(e) => setDashboardName(e.target.value)}
-                />
-              </label>
-              <br />
-              <label>
-                Description:
-                <textarea
-                  name="description"
-                  value={description}
-                  onChange={(e) => setDescription(e.target.value)}
-                ></textarea>
-              </label>
-              <br />
-              <label>
-                Import Excel File:
-                <input type="file" onChange={handleFileChange} />
-              </label>
-              <br />
+            <form onSubmit={handleFileUpload} className="form-center">
+              <div className="form-group">
+                <label>
+                  Nom: <br />
+                  <input
+                    type="text"
+                    name="lastName"
+                    value={lastName}
+                    onChange={(e) => setLastName(e.target.value)}
+                  />
+                </label>
+              </div>
+              <div className="form-group">
+                <label>
+                  Prénom:
+                  <input
+                    type="text"
+                    name="firstName"
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
+                  />
+                </label>
+              </div>
+              <div className="form-group">
+                <label>
+                  PIN bancaire:
+                  <input
+                    type="text"
+                    name="pin"
+                    value={pin}
+                    onChange={(e) => setPin(e.target.value)}
+                  />
+                </label>
+              </div>
+              <div className="form-group">
+                <label>
+                  Nom du Dashboard:
+                  <input
+                    type="text"
+                    name="dashboardName"
+                    value={dashboardName}
+                    onChange={(e) => setDashboardName(e.target.value)}
+                  />
+                </label>
+              </div>
+              <div className="form-group">
+                <label>
+                  Description:
+                  <textarea
+                    name="description"
+                    value={description}
+                    onChange={(e) => setDescription(e.target.value)}
+                  ></textarea>
+                </label>
+              </div>
+              <div className="form-group">
+                <label>
+                  Import Excel File:
+                  <input type="file" onChange={handleFileChange} />
+                </label>
+              </div>
               <center><button type="submit">Envoyer la demande</button></center>
             </form>
           </div>
