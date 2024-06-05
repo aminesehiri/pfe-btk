@@ -60,8 +60,8 @@ function DemandesdeDashboards() {
             <th>Description</th>
             <th>PIN bancaire</th>
             <th>Status</th>
-            <th>Timestamp</th>
-            <th>Actions</th>
+            <th>Date de demande</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>

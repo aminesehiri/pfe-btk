@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import MenuAfterLogin from '../MenuAfterLogin/MenuAfterLogin';
 import './Homepage_dashbord.css';
@@ -23,7 +23,7 @@ const db = getFirestore(app);
 const auth = getAuth();
 
 function Homepage_dashbord() {
-  const [showIframe, setShowIframe] = useState(false);
+  const [showIframe, setShowIframe] = useState(true); // Set to true by default
   const [showDashboardRequest, setShowDashboardRequest] = useState(false);
   const [file, setFile] = useState(null);
   const [dashboardName, setDashboardName] = useState('');
@@ -31,7 +31,7 @@ function Homepage_dashbord() {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [pin, setPin] = useState('');
-  const [iframeSrc, setIframeSrc] = useState('');
+  const [iframeSrc, setIframeSrc] = useState("http://localhost:4848/single/?appid=C%3A%5CUsers%5Cshiri%5COneDrive%5CDocuments%5CQlik%5CSense%5CApps%5Ccommercial.qvf&sheet=92389320-b43b-4b01-85f9-47874976f67e&theme=horizon&opt=ctxmenu,currsel"); // Set default iframe URL
 
   const handleCompteClick = () => {
     setShowIframe(true);
@@ -42,7 +42,7 @@ function Homepage_dashbord() {
   const handleVenteCarteClick = () => {
     setShowIframe(true);
     setShowDashboardRequest(false);
-    setIframeSrc("http://localhost:4848/single/?appid=C%3A%5CUsers%5Cshiri%5CDocuments%5CQlik%5CSense%5CApps%5Cvente%20carte.qvf&sheet=5142f3cd-a519-4cb8-87a9-6662b10ab91b&theme=horizon&opt=ctxmenu,currsel");
+    setIframeSrc("http://localhost:4848/single/?appid=C%3A%5CUsers%5Cshiri%5COneDrive%5CDocuments%5CQlik%5CSense%5CApps%5Cvente%20carte.qvf&sheet=5142f3cd-a519-4cb8-87a9-6662b10ab91b&theme=horizon&opt=ctxmenu,currsel");
   };
   
   const handleCreditClick = () => {
@@ -54,6 +54,21 @@ function Homepage_dashbord() {
     setShowIframe(true);
     setIframeSrc("http://localhost:4848/single/?appid=C%3A%5CUsers%5Cshiri%5COneDrive%5CDocuments%5CQlik%5CSense%5CApps%5CEER.qvf&sheet=9ab8c8ab-070b-4890-b842-e09ebe709da6&theme=horizon&opt=ctxmenu,currsel");
   };
+
+  const handleResiliation_carte_Click = () => {
+    setShowIframe(true);
+    setIframeSrc("http://localhost:4848/single/?appid=C%3A%5CUsers%5Cshiri%5COneDrive%5CDocuments%5CQlik%5CSense%5CApps%5CResiliation_carte.qvf&sheet=97630e0b-fccc-4c64-beb5-adb6337ef8aa&theme=horizon&opt=ctxmenu,currsel");
+  };
+
+  const handleVentePackClick = () => {
+    setShowIframe(true);
+    setIframeSrc("http://localhost:4848/single/?appid=C%3A%5CUsers%5Cshiri%5COneDrive%5CDocuments%5CQlik%5CSense%5CApps%5Cvente_pack.qvf&sheet=2622005e-e8af-400d-a470-875e9179b743&theme=horizon&opt=ctxmenu,currsel");
+  }; 
+
+  const handleClotureCompteClick = () => {
+    setShowIframe(true);
+    setIframeSrc("http://localhost:4848/single/?appid=C%3A%5CUsers%5Cshiri%5COneDrive%5CDocuments%5CQlik%5CSense%5CApps%5Ccloture_compte.qvf&sheet=6b18be7b-b939-405e-ab15-8e9d7b2e8c9b&theme=horizon&opt=ctxmenu,currsel");
+  }
 
   const handleDashboardRequestClick = () => {
     setShowDashboardRequest(true);
@@ -111,12 +126,12 @@ function Homepage_dashbord() {
           <li><br />
             <p>Commercial dashboards:</p>
             <ul className="sub-menu">
-              <li><Link to="#" onClick={handleCompteClick}>Creation Compte</Link></li>
-              <li><Link to="#">Cloture Compte</Link></li>
-              <li><Link to="#" onClick={handleVenteCarteClick}>Vente Carte</Link></li>
-              <li><Link to="#" onClick={handleVenteCarteClick}>Resiliation Carte</Link></li>
-              <li><Link to="#">Vente Pack</Link></li>
               <li><Link to="#" onClick={handleCreditClick}>Credit</Link></li>
+              <li><Link to="#" onClick={handleCompteClick}>Creation Compte</Link></li>
+              <li><Link to="#" onClick={handleVenteCarteClick}>Vente Carte</Link></li>
+              <li><Link to="#" onClick={handleVentePackClick}>Vente Pack</Link></li>
+              <li><Link to="#"onClick={handleClotureCompteClick}>Cloture Compte</Link></li>
+              <li><Link to="#" onClick={handleResiliation_carte_Click}>Resiliation Carte</Link></li>
               <li><Link to="#" onClick={handleEERClick}>EER</Link></li>
             </ul>
           </li>

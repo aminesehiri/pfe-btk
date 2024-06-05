@@ -33,7 +33,7 @@ function App() {
           <Route path='/Adddata' element={<ProtectedRoute><Adddata isOpen={true} /></ProtectedRoute>} />
           <Route path='/DemandesdeDashboards' element={<ProtectedRoute><DemandesdeDashboards isOpen={true} /></ProtectedRoute>} />
         </Routes>
-        <Footer/>
+        
 
       </AuthProvider>
     </Router>
