@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-import BannerAcc from "../banner/BannerAcc";
+
 import BankInfoSection from "../BankInfoSection/BankInfoSection";
 import Banner from "../banner/BannerAcc";
 import Menu from '../menu/Menu';

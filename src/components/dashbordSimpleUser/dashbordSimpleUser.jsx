@@ -1,9 +1,9 @@
 import MenuSimpleUser from '../MenuSimpleUseur/MenuSimpleUseur';
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import MenuAfterLogin from '../MenuAfterLogin/MenuAfterLogin';
+
 import './DashbordSimpleUser.css';
-import axios from 'axios';
+
 import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, addDoc } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';

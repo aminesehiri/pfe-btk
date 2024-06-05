@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+
 import MenuAfterLogin from '../MenuAfterLogin/MenuAfterLogin';
 import './Adddata.css';
 
