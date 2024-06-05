@@ -6,7 +6,7 @@ import axios from 'axios';
 import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, addDoc } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
-import axios from 'axios';
+
 
 
 // Firebase configuration
