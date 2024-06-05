@@ -1,19 +1,115 @@
+/* src/components/Footer/Footer.css */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
 .bank-info-section {
-    padding: 20px;
-    background-color: #f9f9f9;
-    text-align: left;
-    margin-bottom: 20px;
-  }
-  
-  .bank-info-section h2 {
-    color: #0084B5;
-    font-size: 2em;
-    margin-bottom: 10px;
-  }
-  
-  .bank-info-section p {
-    font-size: 1.2em;
-    line-height: 1.6;
-    margin-bottom: 10px;
-  }
+  flex: 1; /* This makes the section take up the remaining space */
+  padding: 20px;
+  background-color: #f9f9f9;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.bank-info-section h2 {
+  color: #003366;
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.bank-info-section p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.team-section {
+  margin-top: 20px;
+}
+
+.team-section .cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: nowrap; /* Ensure cards stay in the same line */
+}
+
+.team-section .card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 30%;
+  text-align: center;
+  padding-top: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  background: transparent; /* Remove white background */
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.team-section .card:hover {
+  transform: scale(1.05); /* Zoom in effect */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.team-section .card img {
+  width: auto;
+  height: 200px; /* Adjust the height to make the image smaller */
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.team-section .card h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.team-section .card p {
+  font-size: 1.2em;
+  color: #777;
+}
+
+.tools-section {
+  margin-top: 20px;
+}
+
+.tools-section .tools {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.tools-section .tool {
+  text-align: center;
+  margin: 10px;
+}
+
+.tools-section .tool img {
+  width: 100px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.tools-section .tool p {
+  font-size: 1.2em;
+  color: #333;
+}
+
+.process-section {
+  margin-top: 20px;
+}
+
+.process-section ol {
+  font-size: 1.2em;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  padding-left: 20px;
+}
+
+.process-section ol li {
+  margin-bottom: 10px;
+}
