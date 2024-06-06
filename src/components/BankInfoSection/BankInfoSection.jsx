@@ -5,9 +5,8 @@ import imgouday from '../../assest/ouday.png';
 import imgabir from '../../assest/abir.png';
 import pythonIcon from '../../assest/python.jpg';
 import talendIcon from '../../assest/talend.png';
-import postgresIcon from '../../assest/postgres.png';
+import postgresIcon from '../../assest/postgre1.png';
 import qliksenseIcon from '../../assest/qlik.png';
-import Footer from '../Footer/Footer';
 
 function BankInfoSection() {
   return (
@@ -35,7 +34,7 @@ function BankInfoSection() {
               <h3>Mohamed Amine Sehiri</h3>
               <p>Ingénieur Web et BI</p>
             </a>
-            <a href="https://www.linkedin.com/in/oudaydjobbi/" target="_blank" rel="noopener noreferrer" className="card">
+            <a href="https://www.linkedin.com/in/oudaydjobbi/" target="_blank" rel="noopener noreferrer" className="card" >
               <img src={imgouday} alt="Ouday Djobbi" />
               <h3>Ouday Djobbi</h3>
               <p>Ingénieur Web et BI</p>
@@ -79,7 +78,9 @@ function BankInfoSection() {
         </section>
         <br /><br /><br />
       </section>
-      <Footer />
+      <footer className="footer">
+        <p>Ce site est développé par Mohamed Amine Sehiri et Ouday Djobbi</p>
+      </footer>
     </div>
   );
 }

@@ -113,3 +113,16 @@
 .process-section ol li {
   margin-bottom: 10px;
 }
+.footer {
+  background-color: #005599;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  
+  width: 100%;
+  bottom: 0;
+}
+
+.footer p {
+  margin: 0;
+}
