@@ -8,7 +8,9 @@ import Menu from '../menu/Menu'; // Import MenuAfterLogin
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [userRole, setUserRole] = useState(''); // State to store user's role
+ // src/components/Login/Login.jsx
+const [userRole, setUserRole] = useState(null); // eslint-disable-line no-unused-vars
+
   const navigate = useNavigate(); // Initialize useNavigate hook
 
   const handleSubmit = async (e) => {

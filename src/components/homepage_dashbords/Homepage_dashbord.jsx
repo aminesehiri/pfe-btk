@@ -1,13 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import MenuAfterLogin from '../MenuAfterLogin/MenuAfterLogin';
 import './Homepage_dashbord.css';
 import axios from 'axios';
 import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, addDoc } from 'firebase/firestore';
-import { getAuth } from 'firebase/auth';
-
-
 
 // Firebase configuration
 const firebaseConfig = {
@@ -22,7 +19,6 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-const auth = getAuth();
 
 function Homepage_dashbord() {
   const [showIframe, setShowIframe] = useState(true); // Set to true by default
@@ -146,6 +142,7 @@ function Homepage_dashbord() {
         {showIframe && (
           <iframe
             src={iframeSrc}
+            title="CommercialDashboardIframe" // Add a unique title
             style={{ border: 'none', width: '100%', height: '100%' }}
           ></iframe>
         )}
