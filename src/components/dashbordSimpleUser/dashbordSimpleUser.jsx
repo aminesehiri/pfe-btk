@@ -32,11 +32,7 @@ function Homepage_dashbord() {
     setIframeSrc("http://localhost:4848/single/?appid=C%3A%5CUsers%5Cshiri%5COneDrive%5CDocuments%5CQlik%5CSense%5CApps%5Ccredit.qvf&sheet=5d677902-712e-4bfd-9ce4-a7d31e48544f&theme=horizon&opt=ctxmenu,currsel");
   };
 
-  const handleEERClick = () => {
-    setShowIframe(true);
-    setIframeSrc("http://localhost:4848/single/?appid=C%3A%5CUsers%5Cshiri%5COneDrive%5CDocuments%5CQlik%5CSense%5CApps%5CEER.qvf&sheet=9ab8c8ab-070b-4890-b842-e09ebe709da6&theme=horizon&opt=ctxmenu,currsel");
-  };
-
+  
   const handleResiliation_carte_Click = () => {
     setShowIframe(true);
     setIframeSrc("http://localhost:4848/single/?appid=C%3A%5CUsers%5Cshiri%5COneDrive%5CDocuments%5CQlik%5CSense%5CApps%5CResiliation_carte.qvf&sheet=97630e0b-fccc-4c64-beb5-adb6337ef8aa&theme=horizon&opt=ctxmenu,currsel");
@@ -68,7 +64,7 @@ function Homepage_dashbord() {
               <li><Link to="#" onClick={handleVentePackClick}>Vente Pack</Link></li>
               <li><Link to="#" onClick={handleClotureCompteClick}>Cloture Compte</Link></li>
               <li><Link to="#" onClick={handleResiliation_carte_Click}>Resiliation Carte</Link></li>
-              <li><Link to="#" onClick={handleEERClick}>EER</Link></li>
+           
             </ul>
           </li>
         </ul>
