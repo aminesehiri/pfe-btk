@@ -8,11 +8,13 @@ import Menu from '../menu/Menu';
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false); // Add loading state
 
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true); // Set loading state
 
     const auth = getAuth();
 
@@ -36,6 +38,8 @@ function Login() {
     } catch (error) {
       console.error('Login failed:', error); 
       alert("Invalid email or password. Please try again.");
+    } finally {
+      setLoading(false); // Clear loading state
     }
   };
 
@@ -44,7 +48,7 @@ function Login() {
       alert("Please enter your email address first.");
       return;
     }
-    
+
     const auth = getAuth();
     try {
       await sendPasswordResetEmail(auth, email);
@@ -84,7 +88,13 @@ function Login() {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
-            <button type="submit" className="btn-primary">Connexion</button>
+            <button type="submit" className="btn-primary" disabled={loading}>
+              {loading ? (
+                <div className="loader"></div>
+              ) : (
+                'Connexion'
+              )}
+            </button>
           </form>
           <button onClick={handleForgotPassword} className="btn-secondary">Mot de passe oublié ?</button>
         </div>
