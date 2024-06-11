@@ -1,17 +1,16 @@
 import React, { useState } from 'react';
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate hook
-import { getFirestore, collection, query, where, getDocs } from 'firebase/firestore'; // Import Firestore
+import { getAuth, signInWithEmailAndPassword, sendPasswordResetEmail } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
+import { getFirestore, collection, query, where, getDocs } from 'firebase/firestore';
 import './LoginCss.css';
-import Menu from '../menu/Menu'; // Import MenuAfterLogin
+import Menu from '../menu/Menu';
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
- // src/components/Login/Login.jsx
-const [userRole, setUserRole] = useState(null); // eslint-disable-line no-unused-vars
+  const [userRole, setUserRole] = useState(null);
 
-  const navigate = useNavigate(); // Initialize useNavigate hook
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -21,15 +20,14 @@ const [userRole, setUserRole] = useState(null); // eslint-disable-line no-unused
     try {
       await signInWithEmailAndPassword(auth, email, password);
       console.log('Login successful');
-      // Fetch user role after successful login
+
       const db = getFirestore();
       const usersRef = collection(db, 'users');
       const q = query(usersRef, where("email", "==", email));
       const querySnapshot = await getDocs(q);
       querySnapshot.forEach((doc) => {
-        const role = doc.data().role; // Assuming 'role' is the field storing user's role
-        setUserRole(role); // Save user role to state
-        // Redirect user to appropriate page based on role
+        const role = doc.data().role;
+        setUserRole(role);
         if (role === 'admin') {
           navigate('/Homepage_dashbord');
         } else {
@@ -38,7 +36,23 @@ const [userRole, setUserRole] = useState(null); // eslint-disable-line no-unused
       });
     } catch (error) {
       console.error('Login failed:', error); 
-      alert("Invalid email or password. Please try again."); // Handle error response
+      alert("Email ou mot de passe incorrect. Veuillez réessayer.");
+    }
+  };
+
+  const handleForgotPassword = async () => {
+    if (!email) {
+      alert("Veuillez d'abord entrer votre adresse e-mail.");
+      return;
+    }
+    
+    const auth = getAuth();
+    try {
+      await sendPasswordResetEmail(auth, email);
+      alert("E-mail de réinitialisation du mot de passe envoyé ! Veuillez vérifier votre boîte de réception.");
+    } catch (error) {
+      console.error('Erreur lors de l\'envoi de l\'e-mail de réinitialisation du mot de passe :', error);
+      alert("Erreur lors de l'envoi de l'e-mail de réinitialisation du mot de passe. Veuillez réessayer.");
     }
   };
 
@@ -73,6 +87,7 @@ const [userRole, setUserRole] = useState(null); // eslint-disable-line no-unused
             </div>
             <button type="submit" className="btn-primary">Connexion</button>
           </form>
+          <button onClick={handleForgotPassword} className="btn-secondary">Mot de passe oublié ?</button>
         </div>
       </div>
     </div>
