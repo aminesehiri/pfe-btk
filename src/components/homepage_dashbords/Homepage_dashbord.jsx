@@ -119,19 +119,18 @@ function Homepage_dashbord() {
       <div className="vertical-navbar">
         <ul>
           <li><br />
-            <p>Commercial dashboards:</p>
+          <p>Tableau de bord commercial :</p>
             <ul className="sub-menu">
               <li><Link to="#" onClick={handleCreditClick}>Credit</Link></li>
               <li><Link to="#" onClick={handleCompteClick}>Creation Compte</Link></li>
               <li><Link to="#" onClick={handleVenteCarteClick}>Vente Carte</Link></li>
               <li><Link to="#" onClick={handleVentePackClick}>Vente Pack</Link></li>
-              <li><Link to="#"onClick={handleClotureCompteClick}>Cloture Compte</Link></li>
-              <li><Link to="#" onClick={handleResiliation_carte_Click}>Resiliation Carte</Link></li>
-              
+              <li><Link to="#" onClick={handleClotureCompteClick}>Clôture Compte</Link></li>
+              <li><Link to="#" onClick={handleResiliation_carte_Click}>Résiliation Carte</Link></li>
             </ul>
           </li>
           <li>
-            <Link to="#" onClick={handleDashboardRequestClick}>Demander un Dashboard</Link>
+            <Link to="#" onClick={handleDashboardRequestClick}>demander un tableau de bord</Link>
           </li>
         </ul>
       </div>
@@ -145,7 +144,7 @@ function Homepage_dashbord() {
         )}
         {showDashboardRequest && (
           <div className="dashboard-request">
-            <center><h2>Demande de Dashboard</h2></center>
+            <center><h2>Demande de tableaux de bord</h2></center>
             <form onSubmit={handleFileUpload} className="form-center">
               <div className="form-group">
                 <label>
@@ -182,7 +181,7 @@ function Homepage_dashbord() {
               </div>
               <div className="form-group">
                 <label>
-                  Nom du Dashboard:
+                Nom du tableau de bord:
                   <input
                     type="text"
                     name="dashboardName"
@@ -203,7 +202,14 @@ function Homepage_dashbord() {
               </div>
               <div className="form-group">
                 <label>
-                  Import Excel File:
+                Importer un fichier Excel
+
+
+
+
+
+
+:
                   <input type="file" onChange={handleFileChange} />
                 </label>
               </div>

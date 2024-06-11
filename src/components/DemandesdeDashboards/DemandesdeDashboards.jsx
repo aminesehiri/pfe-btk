@@ -48,7 +48,7 @@ function DemandesdeDashboards() {
       <div className='menuafterlogin'>
         <MenuAfterLogin />
       </div><br /><br />
-      <h1>Demandes de Dashboards</h1>
+      <h1>Demandes de tableaux de bord</h1>
       <center><p>Les fichiers Excel de chaque demande sont ici pour le moment : <br />
         C:\Users\shiri\OneDrive\Bureau\amine\site\uploads_excels</p> <br /></center>
       <table className="notificationtable">
@@ -56,7 +56,7 @@ function DemandesdeDashboards() {
           <tr>
             <th>Nom</th>
             <th>Prénom</th>
-            <th>Nom du Dashboard</th>
+            <th>Nom du tableau de bord</th>
             <th>Description</th>
             <th>PIN bancaire</th>
             <th>Status</th>

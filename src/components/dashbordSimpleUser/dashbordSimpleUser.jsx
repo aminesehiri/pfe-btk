@@ -56,15 +56,14 @@ function Homepage_dashbord() {
       <div className="vertical-navbar">
         <ul>
           <li><br />
-            <p>Commercial dashboards:</p>
+            <p>Tableau de bord commercial:</p>
             <ul className="sub-menu">
               <li><Link to="#" onClick={handleCreditClick}>Credit</Link></li>
               <li><Link to="#" onClick={handleCompteClick}>Creation Compte</Link></li>
               <li><Link to="#" onClick={handleVenteCarteClick}>Vente Carte</Link></li>
               <li><Link to="#" onClick={handleVentePackClick}>Vente Pack</Link></li>
-              <li><Link to="#" onClick={handleClotureCompteClick}>Cloture Compte</Link></li>
-              <li><Link to="#" onClick={handleResiliation_carte_Click}>Resiliation Carte</Link></li>
-           
+              <li><Link to="#" onClick={handleClotureCompteClick}>Clôture Compte</Link></li>
+              <li><Link to="#" onClick={handleResiliation_carte_Click}>Résiliation Carte</Link></li>
             </ul>
           </li>
         </ul>
