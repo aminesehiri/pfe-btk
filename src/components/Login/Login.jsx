@@ -8,7 +8,6 @@ import Menu from '../menu/Menu';
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [userRole, setUserRole] = useState(null);
 
   const navigate = useNavigate();
 
@@ -27,7 +26,7 @@ function Login() {
       const querySnapshot = await getDocs(q);
       querySnapshot.forEach((doc) => {
         const role = doc.data().role;
-        setUserRole(role);
+        // If you need to redirect based on role
         if (role === 'admin') {
           navigate('/Homepage_dashbord');
         } else {
@@ -36,29 +35,29 @@ function Login() {
       });
     } catch (error) {
       console.error('Login failed:', error); 
-      alert("Email ou mot de passe incorrect. Veuillez réessayer.");
+      alert("Invalid email or password. Please try again.");
     }
   };
 
   const handleForgotPassword = async () => {
     if (!email) {
-      alert("Veuillez d'abord entrer votre adresse e-mail.");
+      alert("Please enter your email address first.");
       return;
     }
     
     const auth = getAuth();
     try {
       await sendPasswordResetEmail(auth, email);
-      alert("E-mail de réinitialisation du mot de passe envoyé ! Veuillez vérifier votre boîte de réception.");
+      alert("Password reset email sent! Please check your inbox.");
     } catch (error) {
-      console.error('Erreur lors de l\'envoi de l\'e-mail de réinitialisation du mot de passe :', error);
-      alert("Erreur lors de l'envoi de l'e-mail de réinitialisation du mot de passe. Veuillez réessayer.");
+      console.error('Error sending password reset email:', error);
+      alert("Error sending password reset email. Please try again.");
     }
   };
 
   return (
     <div className='allpage'>
-      <Menu/> {/* Pass user role as prop */}
+      <Menu/>
       <div className="login-container">
         <div className="login-form">
           <h2>Se connecter</h2>
