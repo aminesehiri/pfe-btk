@@ -26,6 +26,7 @@ function MenuSimpleUseur() {
     </div>
     <ul>
       <li><Link to="/DashbordSimpleUser">Tableaux de bord</Link></li>
+      <li><Link to="/DemandesdeDashboardsSimpleUser">demandes des tableau de bord</Link></li>
 
       <li>
         {/* Use the Link component but attach the handleLogout function */}

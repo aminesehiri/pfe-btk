@@ -68,7 +68,7 @@ function Demanderuncompte() {
             <Menu/>
             <div className='div-2'>
                 <div className='div1'>
-                    <center><h1>Demande de compte</h1></center>
+                   <h1>Demande de compte</h1>
                     <center>
                         <p>
                             Si vous souhaitez créer un compte pour accéder aux tableaux de bord, veuillez remplir le formulaire, et l'un de nos agents approuvera votre demande.

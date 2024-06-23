@@ -4,18 +4,9 @@ import { Link } from 'react-router-dom';
 
 import './DashbordSimpleUser.css';
 
-// Remove unused import
-// import { initializeApp } from 'firebase/app';
-// import { getFirestore } from 'firebase/firestore';
-
-
-
-// Initialize Firebase
-// const app = initializeApp(firebaseConfig); // Already initialized in another file
-
 function Homepage_dashbord() {
   const [showIframe, setShowIframe] = useState(true); // Set to true by default
-  const [iframeSrc, setIframeSrc] = useState("http://localhost:4848/single/?appid=C%3A%5CUsers%5Cshiri%5COneDrive%5CDocuments%5CQlik%5CSense%5CApps%5Ccommercial.qvf&sheet=92389320-b43b-4b01-85f9-47874976f67e&theme=horizon&opt=ctxmenu,currsel"); // Set default iframe URL
+  const [iframeSrc, setIframeSrc] = useState("http://localhost:4848/single/?appid=C%3A%5CUsers%5Cshiri%5COneDrive%5CDocuments%5CQlik%5CSense%5CApps%5Ccredit.qvf&sheet=5d677902-712e-4bfd-9ce4-a7d31e48544f&theme=horizon&opt=ctxmenu,currsel"); // Set default iframe URL to credit dashboard
 
   const handleCompteClick = () => {
     setShowIframe(true);
@@ -32,7 +23,6 @@ function Homepage_dashbord() {
     setIframeSrc("http://localhost:4848/single/?appid=C%3A%5CUsers%5Cshiri%5COneDrive%5CDocuments%5CQlik%5CSense%5CApps%5Ccredit.qvf&sheet=5d677902-712e-4bfd-9ce4-a7d31e48544f&theme=horizon&opt=ctxmenu,currsel");
   };
 
-  
   const handleResiliation_carte_Click = () => {
     setShowIframe(true);
     setIframeSrc("http://localhost:4848/single/?appid=C%3A%5CUsers%5Cshiri%5COneDrive%5CDocuments%5CQlik%5CSense%5CApps%5CResiliation_carte.qvf&sheet=97630e0b-fccc-4c64-beb5-adb6337ef8aa&theme=horizon&opt=ctxmenu,currsel");

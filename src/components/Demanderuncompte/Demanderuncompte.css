@@ -8,12 +8,17 @@
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   width: 400px;
-  margin: 30px auto 50px; /* Combined margin for top and bottom */
+  margin: 30px auto 50px;
   height: 80%;
 }
 
-.div1 h1, .div1 p, .div1 form div, .div1 label, .div1 input, .div1 button {
-  margin-bottom: 10px; /* Standardized margin-bottom for consistency */
+.div1 h1 {
+  margin-bottom: 10px; 
+  text-align: center; /* Center the h1 text */
+}
+
+.div1 p, .div1 form div, .div1 label, .div1 input, .div1 button {
+  margin-bottom: 10px;
 }
 
 .div1 form {
@@ -42,7 +47,7 @@
   color: white;
   font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  transition: background-color 0.3s ease;
 }
 
 .div1 button:hover {
